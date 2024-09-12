@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Fixed font-weight */
+  font-style: normal;
+}
+:root {
+  /*Primary*/
+  --Lime_Green: hsl(163, 72%, 41%);
+  --Bright_Red: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+
+  /*Dark Theme*/
+  --Toggle-dark: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+  /* Light Theme*/
+  --Toggle-light: hsl(230, 22%, 74%);
+
+  /*Dark Theme*/
+  --Very_Dark_Blue: hsl(230, 17%, 14%);
+  --Dark_Desaturated_Blue: hsl(228, 28%, 20%);
+  --Desaturated_Blue: hsl(228, 34%, 66%);
+  --White: hsl(0, 0%, 100%);
+
+  /*Light Theme*/
+  --Very_Pale_Blue: hsl(225, 100%, 98%);
+  --Light_Grayish_Blue: hsl(228, 28%, 20%);
+  --Dark_Grayish_Blue: hsl(228, 12%, 44%);
+}
+.dark_mode{
+    --Very_Pale_Blue: hsl(230, 17%, 14%);
+    --Light_Grayish_Blue: hsl(227, 47%, 96%);
+    --Dark_Grayish_Blue: hsl(228, 34%, 66%);
+    --White: hsl(0, 0%, 100%);
+}
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: var( --Very_Pale_Blue);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.name_bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.name_bar h1 {
+  color: var(--Light_Grayish_Blue);
+}
+
+.name_bar p {
+  color: var(--Dark_Grayish_Blue);
+}
+
+.check_bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.check_bar .situation{
+    color: var(--Light_Grayish_Blue);
+}
+/* Switch button styles */
+.switch {
+  cursor: pointer;
+  --button-width: 3.5em;
+  --button-height: 2em;
+  --toggle-diameter: 1.5em;
+  --button-toggle-offset: calc(
+    (var(--button-height) - var(--toggle-diameter)) / 2
+  );
+  --toggle-shadow-offset: 10px;
+  --toggle-wider: 3em;
+  --color-grey: #cccccc;
+  --color-green: #4296f4;
+}
+
+.slider {
+  display: inline-block;
+  width: var(--button-width);
+  height: var(--button-height);
+  background-color: var(--color-grey);
+  border-radius: calc(var(--button-height) / 2);
+  position: relative;
+  transition: 0.3s all ease-in-out;
+}
+
+.slider::after {
+  content: "";
+  display: inline-block;
+  width: var(--toggle-diameter);
+  height: var(--toggle-diameter);
+  background-color: #fff;
+  border-radius: calc(var(--toggle-diameter) / 2);
+  position: absolute;
+  top: var(--button-toggle-offset);
+  transform: translateX(var(--button-toggle-offset));
+  box-shadow: var(--toggle-shadow-offset) 0
+    calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+  transition: 0.3s all ease-in-out;
+}
+
+.switch input[type="checkbox"]:checked + .slider {
+  background-color: var(--color-green);
+}
+
+.switch input[type="checkbox"]:checked + .slider::after {
+  transform: translateX(
+    calc(
+      var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)
+    )
+  );
+  box-shadow: calc(var(--toggle-shadow-offset) * -1) 0
+    calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, 0.1);
+}
+
+.switch input[type="checkbox"] {
+  display: none;
+}
+
+.switch input[type="checkbox"]:active + .slider::after {
+  width: var(--toggle-wider);
+}
+
+.switch input[type="checkbox"]:checked:active + .slider::after {
+  transform: translateX(
+    calc(
+      var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)
+    )
+  );
+}
+
+.headet_content {
+  display: flex;
+  gap: 30px;
+}
+
+.only_dach {
+  background-color: var(--Facebook);
+  width: 300px;
+  height: max-content;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.body_content {
+  padding: 20px;
+  background-color: var(--Light_Grayish_Blue);
+  height: 90%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.media span {
+  color: var(--Desaturated_Blue);
+}
+
+.body_content h1 {
+  font-size: 3rem;
+  color: var( --Very_Pale_Blue);
+}
+
+.body_content h4 {
+  font-size: 20px;
+  color: var(--Dark_Grayish_Blue);
+}
+
+.body_content p {
+  color: var(--Lime_Green);
+}
+
+.only_dach:nth-child(3) {
+  background: var(--Instagram);
+}
+
+.only_dach:nth-child(4) {
+  background-color: var(--YouTube);
+}
+.body-title h2 {
+  color: var(--Dark_Grayish_Blue);
+  font-weight: 800;
+}
+.body_container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+.only_shoop {
+  display: flex;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--Light_Grayish_Blue);
+  width: 200px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40PX;
+}
+.header_shoop{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.header_shoop img{
+    height: 20px;
+    width: 20px;
+}
+.header_shoop h3{
+    color: var(--Dark_Grayish_Blue);
+    font-size: 20px;
+}
+.body_shoop{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.body_shoop h1{
+    color: var(--Very_Dark_Blue);
+    font-weight: 800;
+}
+.body_shoop p{
+    color: var(--Lime_Green);
+}
+@media only screen and (max-width: 600px) {
+    .headet_content {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        gap: 20PX;
+      }
+      .check_bar {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+      }
+}
